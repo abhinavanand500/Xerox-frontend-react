@@ -7,6 +7,11 @@
 
 # testing
 /coverage
+.env
+uploads/*
+!uploads/.gitkeep
+node_modules
+.DS_Store
 
 # production
 /build
