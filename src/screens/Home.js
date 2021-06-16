@@ -1,9 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-// import { increment } from "../features/HomeSlice";
+import { increment } from "../features/HomeSlice";
 import { login, logout } from "../features/UserSlice";
 const Home = () => {
     const user = useSelector((state) => state.user);
+    const home = useSelector((state) => state.home);
+    console.log(home.value);
     const dispatch = useDispatch();
     return (
         <div>
@@ -19,7 +21,14 @@ const Home = () => {
                 onClick={() => dispatch(logout())}>
                 NAME
             </button>
-            <h1>This is Home page {user.name}</h1>
+            <button
+                aria-label='Increment value'
+                onClick={() => dispatch(increment())}>
+                NAME
+            </button>
+            <h1>
+                This is Home page {user.userDetails.name} - {home.value}
+            </h1>
         </div>
     );
 };
