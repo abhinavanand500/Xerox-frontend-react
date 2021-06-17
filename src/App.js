@@ -6,7 +6,6 @@ import Contact from "./screens/Contact";
 import Navbar from "./components/Navbar";
 import SignIn from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
-import Notification from "./components/Notification";
 function App() {
     return (
         <div>

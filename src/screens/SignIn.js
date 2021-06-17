@@ -136,11 +136,11 @@ const SignIn = () => {
                                             to='/'>
                                             Forgot Password?
                                         </NavLink>
-                                        <div className='ml-2 mt-2 text-sm font-semibold text-red'>
+                                        <div className='ml-2 mt-2 text-sm font-semibold text-gray-700'>
                                             Don’t you have an account?
                                             <NavLink
                                                 className='ml-2 mt-2 text-sm font-semibold text-gray-700 hover:text-black'
-                                                to='/'>
+                                                to='/signup'>
                                                 Sign up
                                             </NavLink>
                                         </div>
