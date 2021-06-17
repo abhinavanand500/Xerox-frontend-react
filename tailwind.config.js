@@ -1,3 +1,4 @@
+const colors = require("tailwindcss/colors");
 module.exports = {
     purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
     darkMode: "media",
@@ -6,6 +7,7 @@ module.exports = {
             textColor: {
                 white: "#FFF",
                 black: "#000",
+                red: colors.red,
             },
         },
     },

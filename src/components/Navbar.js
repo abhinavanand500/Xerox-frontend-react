@@ -13,7 +13,7 @@ const Navbar = () => {
     const dispatch = useDispatch();
     return (
         <div>
-            <Disclosure as='nav' className='bg-gray-800'>
+            <Disclosure as='nav' className='bg-gray-900 body-font'>
                 {({ open }) => (
                     <>
                         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -31,6 +31,12 @@ const Navbar = () => {
                                             <NavLink
                                                 exact
                                                 to='/'
+                                                activeStyle={{
+                                                    // fontWeight: "bold",
+                                                    color: "white",
+                                                    borderBottom:
+                                                        "1px solid gray",
+                                                }}
                                                 activeClassName='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
                                                 className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
                                                 Home
@@ -38,6 +44,12 @@ const Navbar = () => {
                                             <NavLink
                                                 exact
                                                 to='/about'
+                                                activeStyle={{
+                                                    // fontWeight: "bold",
+                                                    color: "white",
+                                                    borderBottom:
+                                                        "1px solid gray",
+                                                }}
                                                 activeClassName='text-white bg-gray-900 px-3 py-2 rounded-md text-sm font-medium'
                                                 className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
                                                 About
@@ -45,6 +57,12 @@ const Navbar = () => {
                                             <NavLink
                                                 exact
                                                 to='/contact'
+                                                activeStyle={{
+                                                    fontWeight: "bold",
+                                                    color: "white",
+                                                    borderBottom:
+                                                        "1px solid gray",
+                                                }}
                                                 activeClassName='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
                                                 className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
                                                 Contact
@@ -108,7 +126,7 @@ const Navbar = () => {
                                                                     </NavLink>
 
                                                                     <NavLink
-                                                                        to='/contact'
+                                                                        to='/home'
                                                                         onClick={() =>
                                                                             dispatch(
                                                                                 logout(),
@@ -122,16 +140,19 @@ const Navbar = () => {
                                                         </div>
                                                     ) : (
                                                         <div className='hidden md:flex items-center justify-end md:flex-1 lg:w-0'>
-                                                            <a
-                                                                href='/'
+                                                            <NavLink
+                                                                to='/signin'
+                                                                activeStyle={{
+                                                                    color: "white",
+                                                                }}
                                                                 className='whitespace-nowrap text-base font-medium text-gray-300 hover:text-white'>
                                                                 Sign in
-                                                            </a>
-                                                            <a
-                                                                href='/'
+                                                            </NavLink>
+                                                            <NavLink
+                                                                to='/signup'
                                                                 className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700'>
                                                                 Sign up
-                                                            </a>
+                                                            </NavLink>
                                                         </div>
                                                     )}
                                                 </>
@@ -236,12 +257,12 @@ const Navbar = () => {
                                     <div className='flex items-center px-10'>
                                         {/* <div className='hidden md:flex items-center justify-end md:flex-1 lg:w-0'> */}
                                         <NavLink
-                                            to='/'
+                                            to='/signin'
                                             className='whitespace-nowrap text-base font-medium px-8 text-gray-300 hover:text-white'>
                                             Sign in
                                         </NavLink>
                                         <NavLink
-                                            to='/'
+                                            to='/signup'
                                             className='ml-8 whitespace-nowrap inline-flex items-center justify-center px-8 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700'>
                                             Sign up
                                         </NavLink>
