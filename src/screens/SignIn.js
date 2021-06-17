@@ -1,6 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
+const useStyles = makeStyles((theme) => ({
+    root: {
+        "& > *": {
+            margin: theme.spacing(1),
+            width: "100%",
+        },
+    },
+}));
+
 const SignIn = () => {
+    const classes = useStyles();
     return (
         <div>
             <main>
@@ -8,11 +20,6 @@ const SignIn = () => {
                     <div
                         className='absolute bg-gray-900 top-0 w-full h-full bg-gray-900'
                         style={{
-                            // backgroundImage:
-                            //     "url(" +
-                            //     require("assets/img/register_bg_2.png")
-                            //         .default +
-                            //     ")",
                             backgroundSize: "100%",
                             backgroundRepeat: "no-repeat",
                         }}></div>
@@ -70,37 +77,39 @@ const SignIn = () => {
                                         </div>
                                         <form>
                                             <div className='relative w-full mb-3'>
-                                                <label
-                                                    className='block uppercase text-gray-700 text-xs font-bold mb-2'
-                                                    htmlFor='grid-password'>
-                                                    Email
-                                                </label>
-                                                <input
-                                                    type='email'
-                                                    className='border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full'
-                                                    placeholder='Email'
-                                                    style={{
-                                                        transition:
-                                                            "all .15s ease",
-                                                    }}
-                                                />
+                                                <form
+                                                    className={classes.root}
+                                                    noValidate
+                                                    autoComplete='off'>
+                                                    <TextField
+                                                        id='outlined-basic'
+                                                        label='Email'
+                                                        variant='outlined'
+                                                        autoComplete='off'
+                                                        // value={shopName}
+                                                        name='shopName'
+                                                        // onChange={setForm}
+                                                    />
+                                                </form>
                                             </div>
 
                                             <div className='relative w-full mb-3'>
-                                                <label
-                                                    className='block uppercase text-gray-700 text-xs font-bold mb-2'
-                                                    htmlFor='grid-password'>
-                                                    Password
-                                                </label>
-                                                <input
-                                                    type='password'
-                                                    className='border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full'
-                                                    placeholder='Password'
-                                                    style={{
-                                                        transition:
-                                                            "all .15s ease",
-                                                    }}
-                                                />
+                                                <div className='relative w-full mb-3'>
+                                                    <form
+                                                        className={classes.root}
+                                                        noValidate
+                                                        autoComplete='off'>
+                                                        <TextField
+                                                            id='outlined-basic'
+                                                            label='Password'
+                                                            variant='outlined'
+                                                            autoComplete='off'
+                                                            // value={shopName}
+                                                            name='shopName'
+                                                            // onChange={setForm}
+                                                        />
+                                                    </form>
+                                                </div>
                                             </div>
                                             <div>
                                                 <label className='inline-flex items-center cursor-pointer'>
@@ -136,14 +145,6 @@ const SignIn = () => {
                                             to='/'>
                                             Forgot Password?
                                         </NavLink>
-                                        <div className='ml-2 mt-2 text-sm font-semibold text-gray-700'>
-                                            Don’t you have an account?
-                                            <NavLink
-                                                className='ml-2 mt-2 text-sm font-semibold text-gray-700 hover:text-black'
-                                                to='/signup'>
-                                                Sign up
-                                            </NavLink>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className='flex flex-wrap mt-6'>
