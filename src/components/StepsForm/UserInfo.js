@@ -58,9 +58,9 @@ const UserInfo = ({ formData, setForm, navigation }) => {
             ) : (
                 <div />
             )}
-            <form className={classes.root} noValidate autoComplete='off'>
+            <div className={classes.root} noValidate autoComplete='off'>
                 <TextField
-                    id='outlined-basic'
+                    id='outlined-basic1'
                     label='Email Id'
                     variant='outlined'
                     autoComplete='off'
@@ -68,11 +68,11 @@ const UserInfo = ({ formData, setForm, navigation }) => {
                     name='email'
                     onChange={setForm}
                 />
-            </form>
+            </div>
             <div className='my-3' />
-            <form className={classes.root} noValidate autoComplete='off'>
+            <div className={classes.root} noValidate autoComplete='off'>
                 <TextField
-                    id='outlined-basic'
+                    id='outlined-basic2'
                     label='Phone Number'
                     variant='outlined'
                     autoComplete='off'
@@ -80,12 +80,12 @@ const UserInfo = ({ formData, setForm, navigation }) => {
                     name='phone'
                     onChange={setForm}
                 />
-            </form>
+            </div>
             <div className='my-3' />
 
-            <form className={classes.root} noValidate autoComplete='off'>
+            <div className={classes.root} noValidate autoComplete='off'>
                 <TextField
-                    id='outlined-basic'
+                    id='outlined-basic3'
                     label='Password'
                     variant='outlined'
                     autoComplete='off'
@@ -94,11 +94,11 @@ const UserInfo = ({ formData, setForm, navigation }) => {
                     name='password'
                     onChange={setForm}
                 />
-            </form>
+            </div>
             <div className='my-3' />
-            <form className={classes.root} noValidate autoComplete='off'>
+            <div className={classes.root} noValidate autoComplete='off'>
                 <TextField
-                    id='outlined-basic'
+                    id='outlined-basic4'
                     label='Confirm Password'
                     variant='outlined'
                     type='password'
@@ -107,7 +107,7 @@ const UserInfo = ({ formData, setForm, navigation }) => {
                     name='confirmPassword'
                     onChange={setForm}
                 />
-            </form>
+            </div>
             <div className='my-3' />
             <div className='my-3' />
             <Button

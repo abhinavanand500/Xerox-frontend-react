@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
+import Footer from "../components/Footer";
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,7 +26,7 @@ const SignIn = () => {
                         }}></div>
                     <div className='container mx-auto px-4 h-full'>
                         <div className='flex content-center items-center justify-center h-full'>
-                            <div className='w-full lg:w-4/12 px-4'>
+                            <div className='w-full lg:w-6/12 px-4'>
                                 <div className='relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0'>
                                     <div className='rounded-t mb-0 px-6 py-6'>
                                         <div className='text-center mb-3'>
@@ -75,14 +76,14 @@ const SignIn = () => {
                                                 Or sign in with credentials
                                             </small>
                                         </div>
-                                        <form>
+                                        <div>
                                             <div className='relative w-full mb-3'>
-                                                <form
+                                                <div
                                                     className={classes.root}
                                                     noValidate
                                                     autoComplete='off'>
                                                     <TextField
-                                                        id='outlined-basic'
+                                                        id='outlined-basic1'
                                                         label='Email'
                                                         variant='outlined'
                                                         autoComplete='off'
@@ -90,17 +91,17 @@ const SignIn = () => {
                                                         name='shopName'
                                                         // onChange={setForm}
                                                     />
-                                                </form>
+                                                </div>
                                             </div>
 
                                             <div className='relative w-full mb-3'>
                                                 <div className='relative w-full mb-3'>
-                                                    <form
+                                                    <div
                                                         className={classes.root}
                                                         noValidate
                                                         autoComplete='off'>
                                                         <TextField
-                                                            id='outlined-basic'
+                                                            id='outlined-basic2'
                                                             label='Password'
                                                             variant='outlined'
                                                             autoComplete='off'
@@ -108,7 +109,7 @@ const SignIn = () => {
                                                             name='shopName'
                                                             // onChange={setForm}
                                                         />
-                                                    </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div>
@@ -139,7 +140,7 @@ const SignIn = () => {
                                                     Sign In
                                                 </button>
                                             </div>
-                                        </form>
+                                        </div>
                                         <NavLink
                                             className='ml-2 mt-8 text-sm font-semibold text-gray-700 hover:text-black'
                                             to='/'>
@@ -168,6 +169,7 @@ const SignIn = () => {
                             </div>
                         </div>
                     </div>
+                    <Footer absolute />
                 </section>
             </main>
         </div>

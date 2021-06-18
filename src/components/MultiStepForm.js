@@ -10,7 +10,7 @@ const defaultData = {
     role: "",
     college: "",
     name: "",
-    semester: null,
+    semester: "",
     usn: "",
     email: "",
     phone: "",

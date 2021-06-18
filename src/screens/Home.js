@@ -1,37 +1,40 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { increment } from "../features/HomeSlice";
+import { NavLink } from "react-router-dom";
 import { login, logout } from "../features/UserSlice";
 const Home = () => {
     const user = useSelector((state) => state.user);
     const home = useSelector((state) => state.home);
-    console.log(home.value);
+    const { userDetails, isLoggedIn } = user;
     const dispatch = useDispatch();
     return (
         <div>
             <section className='text-gray-400 bg-gray-900 body-font'>
                 <div className='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>
                     <div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
-                        <h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-white'>
-                            Before they sold out
-                            {/* <br className='hidden lg:inline-block'>
-                                readymade gluten
-                            </br> */}
-                        </h1>
+                        {isLoggedIn ? (
+                            <h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-white'>
+                                Welcome {userDetails.name}
+                            </h1>
+                        ) : (
+                            <h1 className='title-font sm:text-4xl text-3xl mb-4 font-medium text-white'>
+                                Register or SignIn to see Magic
+                            </h1>
+                        )}
                         <p className='mb-8 leading-relaxed'>
-                            Copper mug try-hard pitchfork pour-over freegan
-                            heirloom neutra air plant cold-pressed tacos poke
-                            beard tote bag. Heirloom echo park mlkshk tote bag
-                            selvage hot chicken authentic tumeric truffaut
-                            hexagon try-hard chambray.
+                            This is a platform where you can promote any events,
+                            Request for Xerox from your Home only, and many
+                            other benifits are included in this website. Hope
+                            you will explore all and let us know how it is
+                            through Contact page.
                         </p>
                         <div className='flex justify-center'>
-                            <button className='inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg'>
-                                Button
-                            </button>
-                            <button className='ml-4 inline-flex text-gray-400 bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-700 hover:text-white rounded text-lg'>
-                                Button
-                            </button>
+                            <NavLink
+                                to='/contact'
+                                className='inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg'>
+                                Have any Doubt?
+                            </NavLink>
                         </div>
                     </div>
                     <div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6'>
@@ -46,7 +49,13 @@ const Home = () => {
             <button
                 aria-label='Increment value'
                 onClick={() =>
-                    dispatch(login({ name: "ABHINAV", usn: "1NH17IS002" }))
+                    dispatch(
+                        login({
+                            name: "ABHINAV",
+                            usn: "1NH17IS002",
+                            src: "https://scontent.fixr3-1.fna.fbcdn.net/v/t1.6435-9/53732606_1854722427967281_6466001520994287616_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=174925&_nc_ohc=AK_tu0xHDg4AX9XTSeA&_nc_ht=scontent.fixr3-1.fna&oh=58638bbc4b0b2ec248c0b112e178172f&oe=60D11FCF",
+                        }),
+                    )
                 }>
                 NAME
             </button>

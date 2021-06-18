@@ -6,6 +6,7 @@ import Contact from "./screens/Contact";
 import Navbar from "./components/Navbar";
 import SignIn from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
+import Footer from "./components/Footer";
 function App() {
     return (
         <div>
@@ -20,6 +21,7 @@ function App() {
                     <Route path='/signup' exact component={SignUp} />
                     <Redirect to='/' />
                 </Switch>
+                <Footer />
             </BrowserRouter>
         </div>
     );

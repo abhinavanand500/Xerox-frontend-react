@@ -29,10 +29,7 @@ const XeroxShopDetail = ({ formData, setForm, navigation }) => {
         <div>
             {role === "Xerox" ? (
                 <div>
-                    <form
-                        className={classes.root}
-                        noValidate
-                        autoComplete='off'>
+                    <div className={classes.root} noValidate autoComplete='off'>
                         <TextField
                             id='outlined-basic'
                             label='Shop Name'
@@ -42,15 +39,12 @@ const XeroxShopDetail = ({ formData, setForm, navigation }) => {
                             name='shopName'
                             onChange={setForm}
                         />
-                    </form>
+                    </div>
                     <div className='my-3' />
                 </div>
             ) : (
                 <div>
-                    <form
-                        className={classes.root}
-                        noValidate
-                        autoComplete='off'>
+                    <div className={classes.root} noValidate autoComplete='off'>
                         <TextField
                             id='outlined-basic'
                             label='USN'
@@ -60,7 +54,7 @@ const XeroxShopDetail = ({ formData, setForm, navigation }) => {
                             name='usn'
                             onChange={setForm}
                         />
-                    </form>
+                    </div>
                     <div className='my-3' />
                     <FormControl
                         variant='outlined'
