@@ -1,9 +1,9 @@
 import React from "react";
-
+import Team from "../components/Team";
 const About = () => {
     return (
         <div>
-            <h1>Hii i am about</h1>
+            <Team />
         </div>
     );
 };

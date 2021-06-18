@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 import { MultiStepForm } from "../components/MultiStepForm";
 const SignUp = () => {
     return (
@@ -69,6 +70,7 @@ const SignUp = () => {
                             </div>
                         </div>
                     </div>
+                    <Footer absolute />
                 </section>
             </main>
         </div>
