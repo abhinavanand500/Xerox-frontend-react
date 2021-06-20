@@ -3,7 +3,7 @@ import { useForm, useStep } from "react-hooks-helper";
 import Role from "./StepsForm/Role";
 import XeroxShopDetail from "./StepsForm/XeroxShopDetail";
 import UserInfo from "./StepsForm/UserInfo";
-import Department from "./StepsForm/Department";
+import ProfileImage from "./StepsForm/ProfileImage";
 import Contact from "./StepsForm/Contact";
 import Review from "./StepsForm/Review";
 const defaultData = {
@@ -18,12 +18,13 @@ const defaultData = {
     department: "",
     password: "",
     confirmPassword: "",
+    img: {},
 };
 const steps = [
     { id: "role" },
     { id: "shopDetails" },
     { id: "userInfo" },
-    { id: "department" },
+    { id: "dp" },
     { id: "contact" },
     { id: "review" },
 ];
@@ -42,8 +43,8 @@ export const MultiStepForm = () => {
             return <XeroxShopDetail {...props} />;
         case "userInfo":
             return <UserInfo {...props} />;
-        case "department":
-            return <Department {...props} />;
+        case "dp":
+            return <ProfileImage {...props} />;
         case "contact":
             return <Contact {...props} />;
         case "review":

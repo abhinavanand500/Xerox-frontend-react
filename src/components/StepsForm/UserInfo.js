@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 const UserInfo = ({ formData, setForm, navigation }) => {
-    console.log(navigation);
     const classes = useStyles();
     const { role, email, phone, semester, password, confirmPassword } =
         formData;
