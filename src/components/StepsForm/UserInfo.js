@@ -23,10 +23,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 const UserInfo = ({ formData, setForm, navigation }) => {
     const classes = useStyles();
-    const { role, email, phone, semester, password, confirmPassword } =
+    const { role, name, email, phone, semester, password, confirmPassword } =
         formData;
     return (
         <div>
+            <div className={classes.root} noValidate autoComplete='off'>
+                <TextField
+                    id='outlined-basic22'
+                    label='Full Name'
+                    variant='outlined'
+                    autoComplete='off'
+                    value={name}
+                    name='name'
+                    onChange={setForm}
+                />
+            </div>
+            <div className='my-3' />
             {role === "Student" ? (
                 <FormControl
                     variant='outlined'

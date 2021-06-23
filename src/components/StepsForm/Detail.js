@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const XeroxShopDetail = ({ formData, setForm, navigation }) => {
+const Detail = ({ formData, setForm, navigation }) => {
     const classes = useStyles();
     const { role, shopName, usn, department } = formData;
     return (
@@ -100,4 +100,4 @@ const XeroxShopDetail = ({ formData, setForm, navigation }) => {
     );
 };
 
-export default XeroxShopDetail;
+export default Detail;

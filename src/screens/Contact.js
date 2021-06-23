@@ -1,17 +1,5 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
-import Footer from "../components/Footer";
-import { makeStyles } from "@material-ui/core/styles";
-const useStyles = makeStyles((theme = "dark") => ({
-    root: {
-        "& > *": {
-            margin: theme.spacing(1),
-            width: "100%",
-        },
-    },
-}));
 const Contact = () => {
-    const classes = useStyles();
     return (
         <div>
             <section className='text-gray-400 bg-gray-900 body-font relative'>
