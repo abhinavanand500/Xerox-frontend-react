@@ -2,6 +2,7 @@ import React from "react";
 import InputLabel from "@material-ui/core/InputLabel";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
+import { NavLink } from "react-router-dom";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { Button } from "@material-ui/core";
@@ -66,6 +67,17 @@ const Role = ({ formData, setForm, navigation }) => {
                         <MenuItem value='Xerox'>Xerox Shop</MenuItem>
                     </Select>
                 </FormControl>
+                <div className='text-gray-500 text-center mt-3 mb-3 font-bold'>
+                    <h1 className='mt-1 mb-3'>
+                        <span className='mx-2'>📓</span> If your College Name is
+                        not there then please send details of your college
+                        through{" "}
+                        <NavLink to='/contact' className='hover:text-black'>
+                            CONTACT
+                        </NavLink>{" "}
+                        page.
+                    </h1>
+                </div>
                 <Button
                     variant='contained'
                     fullWidth

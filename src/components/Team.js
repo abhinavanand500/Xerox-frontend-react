@@ -1,5 +1,6 @@
 import React from "react";
-
+import Abhinav from "../assets/img/Abhinav.jpeg";
+import Chinmaya from "../assets/img/Chinmaya.jpeg";
 const Team = () => {
     return (
         <div>
@@ -22,7 +23,7 @@ const Team = () => {
                                 <img
                                     alt='team'
                                     className='flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4'
-                                    src='https://scontent.fixr3-1.fna.fbcdn.net/v/t1.6435-9/53732606_1854722427967281_6466001520994287616_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=174925&_nc_ohc=AK_tu0xHDg4AX9XTSeA&_nc_ht=scontent.fixr3-1.fna&oh=58638bbc4b0b2ec248c0b112e178172f&oe=60D11FCF'
+                                    src={Abhinav}
                                 />
                                 <div className='w-full'>
                                     <h2 className='title-font font-medium text-lg text-white'>
@@ -44,7 +45,7 @@ const Team = () => {
                                 <img
                                     alt='team'
                                     className='flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4'
-                                    src='https://scontent.fixr3-1.fna.fbcdn.net/v/t1.6435-9/188514337_2922027981459925_1947866165787096352_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=730e14&_nc_ohc=4rNEmSEgVZ0AX-KLjJu&_nc_ht=scontent.fixr3-1.fna&oh=00b3475cb4164e4ad2c7d750db2a5ede&oe=60D0ACA7'
+                                    src={Chinmaya}
                                 />
                                 <div className='w-full'>
                                     <h2 className='title-font font-medium text-lg text-white'>

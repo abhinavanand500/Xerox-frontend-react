@@ -83,6 +83,13 @@ const Detail = ({ formData, setForm, navigation }) => {
                     <div className='my-3' />
                 </div>
             )}
+            <div className='text-gray-500 text-center mt-4 mb-4 font-bold'>
+                <h1 className='mt-1 mb-3'>
+                    <span className='mx-2'>📓</span> Please Enter your Correct
+                    Details.
+                </h1>
+            </div>
+            <div className='my-4' />
             <Button
                 color='secondary'
                 variant='contained'

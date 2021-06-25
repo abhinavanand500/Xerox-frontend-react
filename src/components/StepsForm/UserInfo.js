@@ -120,6 +120,13 @@ const UserInfo = ({ formData, setForm, navigation }) => {
                 />
             </div>
             <div className='my-3' />
+            <div className='text-gray-500 text-center mt-3 mb-3 font-bold'>
+                <h1 className='mt-1 mb-3'>
+                    <span className='mx-2'>📓</span> Please Enter Your Correct
+                    Details
+                </h1>
+            </div>
+            <div className='my-3' />
             <div className='my-3' />
             <Button
                 color='secondary'

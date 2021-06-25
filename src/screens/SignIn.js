@@ -105,6 +105,7 @@ const SignIn = () => {
                                                             label='Password'
                                                             variant='outlined'
                                                             autoComplete='off'
+                                                            type='password'
                                                             // value={shopName}
                                                             name='shopName'
                                                             // onChange={setForm}

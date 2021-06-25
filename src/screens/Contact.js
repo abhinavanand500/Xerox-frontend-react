@@ -1,5 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import instanceApi from "../apis/instanceApi";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
 const Contact = () => {
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleApi = async () => {
+        const response = await instanceApi.post("/contact", {
+            name,
+            phone,
+            email,
+            message,
+        });
+        console.log(response);
+        if (response.data.saved === true) {
+            setName("");
+            setEmail("");
+            setPhone("");
+            setMessage("");
+            toast.success(response.data.message);
+        } else {
+            toast.error(response.data.message);
+        }
+    };
     return (
         <div>
             <section className='text-gray-400 bg-gray-900 body-font relative'>
@@ -52,9 +80,11 @@ const Contact = () => {
                                 <h2 className='title-font font-semibold text-white tracking-widest text-xs'>
                                     EMAIL
                                 </h2>
-                                <a className='text-indigo-400 leading-relaxed'>
+                                <NavLink
+                                    className='text-indigo-400 leading-relaxed'
+                                    to='/'>
                                     abhinav.anand500@email.com
-                                </a>
+                                </NavLink>
                                 <h2 className='title-font font-semibold text-white tracking-widest text-xs mt-4'>
                                     PHONE
                                 </h2>
@@ -79,6 +109,8 @@ const Contact = () => {
                             <input
                                 type='text'
                                 id='name'
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                                 name='name'
                                 className='w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                             />
@@ -93,6 +125,8 @@ const Contact = () => {
                             <input
                                 type='text'
                                 id='phone'
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
                                 name='phone'
                                 className='w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                             />
@@ -107,6 +141,8 @@ const Contact = () => {
                                 type='email'
                                 id='email'
                                 name='email'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 className='w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                             />
                         </div>
@@ -119,9 +155,13 @@ const Contact = () => {
                             <textarea
                                 id='message'
                                 name='message'
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
                                 className='w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out'></textarea>
                         </div>
-                        <button className='text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg'>
+                        <button
+                            className='text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg'
+                            onClick={handleApi}>
                             SEND
                         </button>
                         <p className='text-xs text-gray-400 text-opacity-90 mt-3'>
