@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 const Role = ({ formData, setForm, navigation }) => {
     const classes = useStyles();
     const { role, college } = formData;
-    console.log(role);
     return (
         <div>
             <div className='relative w-full mb-3'>
@@ -27,6 +26,7 @@ const Role = ({ formData, setForm, navigation }) => {
                     <InputLabel id='demo-simple-select-outlined-label'>
                         College Name
                     </InputLabel>
+
                     <Select
                         labelId='demo-simple-select-outlined-label'
                         id='demo-simple-select-outlined'

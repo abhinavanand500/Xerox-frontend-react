@@ -1,12 +1,29 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import CameraAltRoundedIcon from "@material-ui/icons/CameraAltRounded";
-
+import instanceApi from "../../apis/instanceApi";
+import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 const Department = ({ formData, setForm, navigation }) => {
+    let history = useHistory();
+    const {
+        role,
+        college,
+        name,
+        semester,
+        usn,
+        email,
+        phone,
+        shopName,
+        department,
+        password,
+        confirmPassword,
+    } = formData;
+    const [imag, setImage] = useState(null);
     const uploadedImage = useRef(null);
     const imageUploader = useRef(null);
-
-    const handleImageUpload = (e) => {
+    const handleImageUpload = async (e) => {
+        const file = e.target.files[0];
+        setImage(file);
         const [img] = e.target.files;
         if (img) {
             const reader = new FileReader();
@@ -16,8 +33,30 @@ const Department = ({ formData, setForm, navigation }) => {
                 current.src = e.target.result;
             };
             reader.readAsDataURL(img);
-            formData.img = img;
         }
+    };
+    const handleSignUp = async () => {
+        // console.log(formData);
+        const data = new FormData();
+        data.append("role", role);
+        data.append("college", college);
+        data.append("name", name);
+        data.append("semester", semester);
+        data.append("usn", usn);
+        data.append("email", email);
+        data.append("phone", phone);
+        data.append("shopName", shopName);
+        data.append("department", department);
+        data.append("password", password);
+        data.append("confirmPassword", confirmPassword);
+        data.append("file", imag);
+        try {
+            const response = await instanceApi.post("/register", data);
+            console.log(response);
+        } catch (err) {
+            console.log(err);
+        }
+        // history.push("/");
     };
     return (
         <div>
@@ -32,6 +71,7 @@ const Department = ({ formData, setForm, navigation }) => {
                 <input
                     type='file'
                     accept='image/*'
+                    name='img'
                     onChange={handleImageUpload}
                     ref={imageUploader}
                     style={{
@@ -78,7 +118,7 @@ const Department = ({ formData, setForm, navigation }) => {
                 <Button
                     color='primary'
                     variant='contained'
-                    onClick={() => navigation.next()}>
+                    onClick={handleSignUp}>
                     SUBMIT
                 </Button>
             </div>

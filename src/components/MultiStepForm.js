@@ -16,7 +16,6 @@ const defaultData = {
     department: "",
     password: "",
     confirmPassword: "",
-    img: {},
 };
 const steps = [
     { id: "role" },
