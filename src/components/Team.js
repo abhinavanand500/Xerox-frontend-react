@@ -1,6 +1,6 @@
 import React from "react";
-import Abhinav from "../assets/img/Abhinav.jpeg";
-import Chinmaya from "../assets/img/Chinmaya.jpeg";
+import Dhurvesh from "../assets/img/dhurvesh.jpeg";
+import Aamani from "../assets/img/Aamani.jpeg";
 const Team = () => {
     return (
         <div>
@@ -23,17 +23,17 @@ const Team = () => {
                                 <img
                                     alt='team'
                                     className='flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4'
-                                    src={Abhinav}
+                                    src={Aamani}
                                 />
                                 <div className='w-full'>
                                     <h2 className='title-font font-medium text-lg text-white'>
-                                        Abhinav Anand
+                                        Aamani Tandasi
                                     </h2>
                                     <h3 className='text-gray-500 mb-3'>
-                                        Full Stack Web Developer
+                                        HR Head
                                     </h3>
                                     <p className='mb-4'>
-                                        Web+App Developer, Always keen to learn
+                                        Web+App Designer, Always keen to learn
                                         new technologies related to it. Working
                                         on Web+App from last 1 year.
                                     </p>
@@ -45,14 +45,14 @@ const Team = () => {
                                 <img
                                     alt='team'
                                     className='flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4'
-                                    src={Chinmaya}
+                                    src={Dhurvesh}
                                 />
                                 <div className='w-full'>
                                     <h2 className='title-font font-medium text-lg text-white'>
-                                        Chinmaya Kumar Nayak
+                                        Durvesh Deshmukh
                                     </h2>
                                     <h3 className='text-gray-500 mb-3'>
-                                        Full Stack Web Developer
+                                        Tech Lead and Founder
                                     </h3>
                                     <p className='mb-4'>
                                         Have a good knowledge of ML along with

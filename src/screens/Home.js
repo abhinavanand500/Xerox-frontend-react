@@ -22,12 +22,20 @@ const Home = () => {
                                 Register or SignIn to see Magic
                             </h1>
                         )}
-                        <p className='mb-8 leading-relaxed'>
+                        {/* <p className='mb-8 leading-relaxed'>
                             This is a platform where you can promote any events,
                             Request for Xerox from your Home only, and many
                             other benifits are included in this website. Hope
                             you will explore all and let us know how it is
                             through Contact page.
+                        </p> */}
+                        <p className='mb-8 leading-relaxed'>
+                            The Certificates hosted on our platform provide a
+                            way for the certificate holder to prove credibility
+                            of their certificates since the certificates are
+                            publicaly verifiable and can be viewed through
+                            www.globalcert.cloud anytime, anywhere and by anyone
+                            with adequate credentials.
                         </p>
                         <div className='flex justify-center'>
                             <NavLink
